@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 - Static Web Tutorial</title>
+</head>
+<body>
+  <p><a href="./index.html">←トップページに戻る</a></p>
+  <p><a href="./02.html">02. 上達のためにやるべきこと とにかく他のマネをする！！→</a></p>
+
+  <h1>01. はじめに</h1>
+  <h2>HTML/CSS/Java Scriptって？？</h2>
+
+  <h2>WebページはHTMLだけで作れる！！</h2>
+  <p>でも文字が並んでいるだけ...</p>
+  <img style="padding: 4px; border: solid 1px black;" src="./images/姜.jpg" alt="姜.jpg" width="300" height="200" />
+  <p>写真は表示できるけど，味気ないし，ちょっとタサイ...</p>
+
+  <h2>そんな君をCSSが救います．</h2>
+  <p>CSSを使うと...</p>
+  <p style="color: red;">文字の色を変えたり</p>
+  <p style="font-family: sans-serif;">フォントを変えたり</p>
+  <div style="display: flex">
+    <img style="padding: 4px; border: solid 1px black;" src="./images/姜.jpg" alt="姜.jpg" width="150" height="100" />
+    <img style="padding: 4px; border: solid 1px black;" src="./images/姜.jpg" alt="姜.jpg" width="150" height="100" />
+    <img style="padding: 4px; border: solid 1px black;" src="./images/姜.jpg" alt="姜.jpg" width="150" height="100" />
+  </div>
+  <p>写真を横並びにすることもできる！！</p>
+
+  <h2>さらにJavaScriptを使うと...</h2>
+  <div id="clock"></div>
+  <p>時間を表示したり</p>
+  <p>ちょっとプログラミング要素が増えることでいろんなことができる！</p>
+  <p>すなわち，CSSまではプログラミングではない，単なるデザインということ．</p>
+
+  <h2>このページの中身を見るためには...</h2>
+  <p>方法は主に3つ．</p>
+  <ul>
+    <li>F12キーを押して開発者ツールのソースタブから見る</li>
+    <li>ページを右クリックしてページソースを表示を押して見る</li>
+    <li>Cmd+SでページをHTMLで保存して見る</li>
+  </ul>
+
+  <img style="padding: 4px; border: solid 1px black;" src="./images/F12.png" alt="F12" width="400" height="240" />
+
+  <p><a href="./02.html">02. 上達のためにやるべきこと とにかく他のマネをする！！→</a></p>
+  <p><a href="./index.html">←トップページに戻る</a></p>
+
+  <footer>
+    <p>&copy; 2022 <a href="https://www.kantacky.com/" target="_blank" rel="noopener noreferrer">Kantacky</a></p>
+  </footer>
+
+  <script type="text/javascript">
+    function set2fig(num) {
+      var ret;
+      if( num < 10 )
+        return "0" + num;
+      return num;
+    }
+
+    function clock() {
+      let date = new Date();
+      document.getElementById("clock").innerHTML = `<h4>${date.getFullYear()}/${set2fig(date.getMonth() + 1)}/${set2fig(date.getDate())} ${set2fig(date.getHours())}:${set2fig(date.getMinutes())}:${set2fig(date.getSeconds())}</h4>`;
+    }
+
+    setInterval('clock()', 1000);
+  </script>
+</body>
+</html>
